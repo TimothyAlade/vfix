@@ -8,8 +8,23 @@ export async function handler(event){
     const text =
     body.text;
 
-    const instruction =
-    body.instruction;
+    const prompt = `
+
+Analyze this conversation.
+
+Return STRICT JSON ONLY:
+
+{
+  "mood":"",
+  "situation":"",
+  "strategy":"",
+  "reply":""
+}
+
+Conversation:
+${text}
+
+`;
 
     const response =
     await fetch(
@@ -41,29 +56,7 @@ export async function handler(event){
 
             {
               role:"system",
-              content:`
-
-${instruction}
-
-Return STRICT JSON:
-
-{
-  "intent":"",
-  "rewrite":"",
-  "replies":[
-    "",
-    "",
-    "",
-    ""
-  ]
-}
-
-`
-            },
-
-            {
-              role:"user",
-              content:text
+              content:prompt
             }
 
           ]
@@ -77,28 +70,17 @@ Return STRICT JSON:
     const data =
     await response.json();
 
-    const raw =
+    const content =
     data.choices?.[0]?.message?.content;
 
     const parsed =
-    JSON.parse(raw);
+    JSON.parse(content);
 
     return{
 
       statusCode:200,
 
-      body:JSON.stringify({
-
-        result:
-        parsed.rewrite,
-
-        intent:
-        parsed.intent,
-
-        replies:
-        parsed.replies
-
-      })
+      body:JSON.stringify(parsed)
 
     };
 
