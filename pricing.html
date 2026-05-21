@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoxFix AI Pricing</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="pricing-container">
+
+  <h1>Unlock Elite AI Communication</h1>
+  <p>Upgrade your conversations, business communication, voice transcription, and AI reply generation.</p>
+
+  <div class="pricing-grid">
+
+    <!-- Free Plan -->
+    <div class="pricing-card free">
+      <h3>Free</h3>
+      <p>$0 Forever</p>
+      <ul>
+        <li>Basic rewrites</li>
+        <li>Limited usage</li>
+        <li>Standard AI speed</li>
+        <li>Basic conversation analysis</li>
+      </ul>
+      <button disabled class="current-plan">Current Plan</button>
+    </div>
+
+    <!-- Weekly Pro Plan -->
+    <div class="pricing-card weekly">
+      <h3>Weekly Pro</h3>
+      <p>$4.99 / week</p>
+      <ul>
+        <li>Unlimited rewrites</li>
+        <li>Smart AI replies</li>
+        <li>Voice transcription</li>
+        <li>Priority AI speed</li>
+        <li>Premium analysis</li>
+      </ul>
+      <button class="btn-upgrade" onclick="payPlan('weekly')">Upgrade Weekly</button>
+    </div>
+
+    <!-- Monthly Elite Plan -->
+    <div class="pricing-card monthly">
+      <h3>Monthly Elite</h3>
+      <p>$14.99 / month</p>
+      <ul>
+        <li>Everything in Weekly</li>
+        <li>Multilingual AI</li>
+        <li>Advanced tone control</li>
+        <li>Business optimization</li>
+        <li>Elite AI engine</li>
+        <li>Faster processing</li>
+      </ul>
+      <button class="btn-upgrade" onclick="payPlan('monthly')">Upgrade Monthly</button>
+    </div>
+
+    <!-- Lifetime Plan -->
+    <div class="pricing-card lifetime">
+      <h3>Lifetime Access</h3>
+      <p>$79 once</p>
+      <ul>
+        <li>Lifetime premium access</li>
+        <li>Future premium updates</li>
+      </ul>
+      <button class="btn-upgrade" onclick="payPlan('lifetime')">Upgrade Lifetime</button>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="pricing.js"></script>
+</body>
+</html>

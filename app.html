@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8"/>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0"/>
+
+<title>VoxFix AI</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+<div class="app-box">
+
+<h1>
+VoxFix AI
+<span class="pro-badge">
+PRO
+</span>
+</h1>
+
+<p class="subtitle">
+Turn rough voice notes and messages
+into polished communication.
+</p>
+
+<div id="premiumBanner">
+
+🔥 Upgrade to Premium for:
+<br><br>
+
+✓ Unlimited rewrites
+<br>
+
+✓ Smart luxury tones
+<br>
+
+✓ Better AI quality
+<br>
+
+✓ Faster voice processing
+
+</div>
+
+<div id="usesBox">
+
+Free Uses Left:
+<span id="usesCount">3</span>
+
+</div>
+
+<textarea
+id="inputText"
+placeholder="Paste rough message here..."
+></textarea>
+
+<input
+type="file"
+id="voiceFile"
+accept="audio/*"
+/>
+
+<select id="tone">
+
+<option>Professional</option>
+
+<option>Respectful</option>
+
+<option>Client Reply</option>
+
+<option>Pidgin to English</option>
+
+<option>Fix Grammar</option>
+
+<option>Short & Clear</option>
+
+<option>Sound Smarter</option>
+
+<option>Romantic</option>
+
+<option disabled>
+──────── PREMIUM ────────
+</option>
+
+<option>CEO Style</option>
+
+<option>Luxury English</option>
+
+<option>Elite Business</option>
+
+<option>High Value Texting</option>
+
+<option>Premium Client Pitch</option>
+
+</select>
+
+<button
+onclick="fixMessage()"
+class="main-btn">
+
+Fix My Message
+
+</button>
+
+<button
+onclick="upgradeNow()"
+class="upgrade-btn">
+
+Upgrade To Premium
+
+</button>
+
+<div id="loading">
+Processing...
+</div>
+
+<div id="result"></div>
+
+<div class="actions">
+
+<button onclick="copyResult()">
+Copy Result
+</button>
+
+<button onclick="shareWhatsApp()">
+Share WhatsApp
+</button>
+
+</div>
+
+<h2 class="history-title">
+Recent Results
+</h2>
+
+<div id="history"></div>
+
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

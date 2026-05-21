@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoxFix AI</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+
+<header class="navbar">
+  <div class="logo">Vox<span>Fix</span> AI</div>
+  <div class="nav-right">
+    <button id="signInBtn" class="nav-btn" onclick="openAuth()">Sign In</button>
+    <button class="premium-btn" onclick="openPricing()">✨ Premium</button>
+    <div id="welcomeUser" class="welcome-user">Hi, Guest</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<div id="menuPanel" class="menu-panel">
+  <button onclick="openPricing()">Premium</button>
+  <button onclick="openHistory()">History</button>
+  <button onclick="openSettings()">Settings</button>
+  <button onclick="logoutUser()">Logout</button>
+</div>
+
+<section class="hero-section">
+  <div class="hero-badge">AI COMMUNICATION PLATFORM</div>
+  <h1 class="hero-title">Transform Rough Messages Into <span>Powerful Conversations</span></h1>
+  <p class="hero-text">Rewrite messages, analyze conversations, detect toxicity, generate emotionally intelligent replies, and communicate smarter with AI.</p>
+</section>
+
+<section class="main-card">
+
+  <!-- Personality & Language Selectors -->
+  <div class="settings-bar">
+    <select id="personaSelect" onchange="updatePersona()">
+      <option value="Neutral">Neutral</option>
+      <option value="CEO">CEO</option>
+      <option value="Therapist">Therapist</option>
+      <option value="Romantic">Romantic</option>
+      <option value="GenZ">Gen Z</option>
+    </select>
+
+    <select id="languageSelect" onchange="updateLanguage()">
+      <option value="auto">Detect Language</option>
+      <option value="en">English</option>
+      <option value="yo">Yoruba</option>
+      <option value="ig">Igbo</option>
+      <option value="ha">Hausa</option>
+      <option value="pcm">Pidgin</option>
+      <option value="sw">Swahili</option>
+    </select>
+  </div>
+
+  <div class="input-wrapper">
+    <textarea id="inputText" placeholder="Paste or type your message here..."></textarea>
+    <label for="voiceFile" class="audio-btn">＋ Upload Audio</label>
+    <input id="voiceFile" type="file" accept="audio/*" hidden>
+    <button id="micBtn" class="mic-btn">🎤</button>
+    <button class="send-btn" onclick="fixMessage()">➜</button>
+  </div>
+
+  <div class="example-grid">
+    <div class="example-card before">
+      <div class="example-label">Before</div>
+      <p>bro why are you ignoring me i texted you since yesterday</p>
+    </div>
+    <div class="example-card after">
+      <div class="example-label">After</div>
+      <p>Hey, just checking in to see if you saw my previous message. Looking forward to hearing from you.</p>
+    </div>
+  </div>
+
+  <div class="action-grid">
+    <button class="action-btn blue" onclick="analyzeConversation()">Analyze Conversation</button>
+    <button class="action-btn green" onclick="fixMessage()">Polish Message</button>
+    <button class="action-btn purple" onclick="shouldISendThis()">Should I Send This?</button>
+    <button class="action-btn red" onclick="detectToxicity()">Toxicity Detector</button>
+    <button class="action-btn gold" onclick="analyzeTone()">AI Tone Meter</button>
+  </div>
+
+  <div id="loading" class="loading-text">VoxFix AI is analyzing...</div>
+  <div id="result"></div>
+  <div id="shareWrapper" style="margin-top:12px; display:none;">
+    <button class="action-btn gold" id="shareBtn" onclick="shareResult()">Share Result</button>
+  </div>
+
+  <div class="reply-modes">
+    <button onclick="generateReply('Professional')">Professional</button>
+    <button onclick="generateReply('Confident')">Confident</button>
+    <button onclick="generateReply('Calm')">Calm</button>
+    <button onclick="generateReply('Flirty')">Flirty</button>
+    <button onclick="generateReply('Business')">Business</button>
+    <button onclick="generateReply('Persuasive')">Persuasive</button>
+  </div>
+
+</section>
+
+<section class="premium-section">
+  <h2>Upgrade To Premium</h2>
+  <p>Unlock elite AI intelligence, advanced emotional analysis, voice transcription, multilingual communication, and premium response quality.</p>
+  <button onclick="openPricing()" class="premium-big-btn">Upgrade Now</button>
+</section>
+
+<footer class="footer">Powered by VoxFix AI</footer>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
